@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | AppDost</title>
+  <link rel="stylesheet" href="services.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+ * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-size: 1.1rem;
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #0b1220;
+      background: linear-gradient(180deg, #fbfdff 0%, #f3f7fb 100%);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.75;
+    }
+
+    /* ---------- NAV ---------- */
+    .scuh {
+ position:fixed;
+  width: 100%;
+        top: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1.6rem;
+      gap: 1rem;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
+      box-shadow: 0 6px 18px rgba(20, 30, 50, 0.07);
+      backdrop-filter: blur(6px);
+    }
+
+    .scuh .logo {
+      height: 40px;
+    }
+
+    .s-right {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .s-right a {
+      color: #0b1220;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+      padding: 0.5rem 0.6rem;
+      border-radius: 8px;
+      transition: all 0.22s ease;
+    }
+
+    .s-right a:hover {
+      transform: translateY(-2px);
+      color: #4f46e5;
+      background: rgba(79, 70, 229, 0.06);
+    }
+
+    .sbtn {
+      display: none;
+      background: none;
+      border: 0;
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: 6px 8px;
+    }
+
+/* ===== HERO ===== */
+.hero {
+  height: 90vh;
+  background: rgb(179, 219, 245);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #16b5ff, #615ae4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #0c244f;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #16b5ff, #02020b);
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg,  #02020b, #16b5ff);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(97, 90, 228, 0.3);
+}
+/* ===== SERVICES SECTION ===== */
+.services {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: #0d1117;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #16b5ff, #615ae4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  color: #9ca3af;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  max-width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 194, 255, 0.15);
+}
+
+.service-card img.service-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #00c2ff;
+}
+
+.service-card p {
+  color: #bfc6d2;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .services {
+    padding: 4rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .service-card {
+    padding: 1.8rem 1.2rem;
+    max-width: 100%;
+  }
+
+  .service-card img.service-icon {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: linear-gradient(135deg, #0e9ab2, #16b5ff);
+  text-align: center;
+  color: white;
+  padding: 5rem 2rem;
+}
+
+.cta-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-outline {
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #0e9ab2;
+}
+
+
+.soc-btn:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+  box-shadow: 0 8px 20px rgba(56, 182, 241, 0.3);
+}
+
+
+/* ---------- FOOTER ---------- */
+.footer{
+  background:linear-gradient(180deg,#4f46e5,#0b1220);
+  color:#e6eefc;
+   margin-top: 0.1rem;
+  padding:2.6rem 1rem;
+  font-size: 1.25rem;
+}
+.fwrap{
+  display:flex;
+  gap:2rem;
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1rem;
+  flex-wrap:wrap;
+}
+.fcol{flex:1;min-width:200px;}
+.flogo{height:36px;filter:brightness(10) invert(1);margin-bottom:10px;}
+.footer h4{margin:0 0 10px 0;}
+.footer a{ font-size: 1.05rem; color:rgba(255,255,255,0.9);text-decoration:none;display:inline-block;margin-bottom:6px;}
+.footer .btn{margin-top:10px;}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1000px){
+  body {
+    font-size: 1.05rem;
+  }
+  .about h2 {
+    font-size: 1.4rem;
+  }
+  .cnum {
+    font-size: 1.7rem;
+  }
+  .ctxt {
+    font-size: 1rem;
+  }
+  .services h3 {
+    font-size: 1.2rem;
+  }
+  .card {
+    font-size: 1.05rem;
+  }
+  .cl {
+    font-size: 1.05rem;
+  }
+  .footer h4 {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width:720px){
+  .s-right{display:none;}
+  .sbtn{display:block;}
+  .s-right.open{
+    display:flex;
+    position:absolute;
+    top:64px;
+    right:14px;
+    background:#fff;
+    padding:12px;
+    flex-direction:column;
+    border-radius:10px;
+    box-shadow:0 14px 40px rgba(2,6,23,0.12);
+  }
+
+
+  .hero-inner{padding:3rem 1rem;}
+  .hero{min-height:520px;}
+  .grid6{grid-template-columns:1fr;}
+  .wrap{text-align:left;padding-left:1rem;padding-right:1rem;}
+  .cbox {
+    padding: 20px 18px;
+    min-height: 90px; /* slightly smaller on mobile */
+  }
+  .cwrap{flex-direction:row;gap:12px;overflow:auto;padding:0 1rem;}
+   .proj-card { max-width: 100%; }
+  .ctawrap h2 { font-size: 1.8rem; }
+  .ctawrap p { font-size: 1rem; }
+  .cta-buttons { flex-direction: column; gap: 0.8rem; }
+}
+@media (max-width:420px){
+  .badge{font-size:0.75rem;padding:6px 10px;}
+  .hero-title{font-size:1.5rem;}
+  .hero-lead{font-size:0.95rem;}
+  .cnum{font-size:1.25rem;}
+}
+
+/* ---------- animations ---------- */
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+.card,.cbox,.cl,.feat,.wrap{opacity:0;transform:translateY(18px);transition:all .6s cubic-bezier(.2,.9,.2,1);}
+.in{opacity:1;transform:translateY(0);}
+
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+  background: #00c2ff;
+  color: #0a0f2d;
+}
+
+.btn:hover {
+  background: #009ed0;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #00c2ff;
+}
+
+
+
+.btn.secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #00c2ff;
+}
+
+
+
+
+/* Container for all social icons */
+.social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;       /* allows wrapping on smaller screens */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Link wrapper */
+.social-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Icon styling */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* Hover animation */
+.social-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Responsive resizing */
+@media (max-width: 768px) {     /* tablets */
+  .social-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {     /* mobile phones */
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+  </style>
+
+
+</head>
+<body>
+ <!-- NAV -->
+  <nav id="scuh" class="scuh">
+    <div class="s-left">
+      <img src="https://res.cloudinary.com/dhled94be/image/upload/v1762145701/course_thumbnails/fc5f257dr6tzjntorhse.png" alt="AppDost" class="logo" />
+    </div>
+    <div class="s-right" id="slinks">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="joinus.html">Join Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button id="sbtn" class="sbtn" aria-label="toggle menu">☰</button>
+  </nav>
+
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Our Services</h1>
+      <p>Empowering your business with world-class technology solutions that drive innovation, efficiency, and success.</p>
+      <a href="#services" class="btn-primary">Explore Services</a>
+    </div>
+  </section>
+<section id="services" class="services">
+  <div class="container">
+    <h2 class="section-title">What We Offer</h2>
+    <p class="section-subtitle">
+      From concept to launch — we design, build, and support solutions that grow with you.
+    </p>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Mobile App Development" class="service-icon">
+        <h3>Mobile App Development</h3>
+        <p>Android, iOS & cross-platform apps using React Native & Flutter.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Website Design" class="service-icon">
+        <h3>Website Design & Development</h3>
+        <p>SEO-optimized, responsive, and conversion-focused websites.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Software Development" class="service-icon">
+        <h3>Software Development</h3>
+        <p>Enterprise-level applications with Java, Spring Boot, and secure REST APIs.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="cloud.png" alt="Cloud & DevOps" class="service-icon">
+        <h3>Cloud & DevOps</h3>
+        <p>AWS-based infrastructure, CI/CD pipelines, Dockerization, and monitoring.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1040/1040231.png" alt="CRM Development" class="service-icon">
+        <h3>CRM Development</h3>
+        <p>Streamlined customer management systems to enhance relationships and sales.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="Digital Marketing" class="service-icon">
+        <h3>Digital Marketing</h3>
+        <p>SEO, SMM, and brand visibility enhancement.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="Internship & Training" class="service-icon">
+        <h3>Internship & Training</h3>
+        <p>Industrial training in Java, Web, and Cloud technologies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta">
+    <div class="cta-content">
+      <h2>Let’s Build Something Amazing Together</h2>
+      <p>Collaborate with our expert team to create innovative solutions that set you apart from the competition.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-primary">Get Started</a>
+        <a href="portfolio.html" class="btn-outline">View Projects</a>
+      </div>
+    </div>
+  </section>
+
+  
+   <!-- footer-->
+  <footer id="contact" class="footer">
+    <div class="wrap fwrap">
+      <div class="fcol">
+        <p>Your Complete IT & Digital Solutions Partner.</p>
+        <p class="copy">&copy;   AppDost Pvt. Ltd. </p>
+                <p class="copy">   All Rights Reserved.  </p>
+      </div>
+
+      <div class="fcol">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4>Get in Touch</h4>
+        <ul>
+         <li><a href="mailto:info@appdost.com"> info@appdost.com</a></li>
+          <li><a href="www.appdost.com"> www.appdost.com</a></li>
+          <li><a href="contact.html">Request a Quote</a></li>
+  <li><a href="tel:+917635075422">+91 76350 75422</a></li>        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4>Follow Us</h4>
+        <div class="soc">
+          <div class="social-container">
+  <a href="https://www.facebook.com" class="social-link" target="_blank">
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" 
+      alt="Facebook Logo" 
+      class="social-icon"
+    >
+  </a>
+
+
+       <a href="https://twitter.com" class="social-link" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Twitter_new_X_logo.png" 
+       alt="Twitter Logo" 
+       class="social-icon">
+</a>
+
+  <a href="https://www.linkedin.com" class="social-link" target="_blank">
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" 
+      alt="LinkedIn Logo" 
+      class="social-icon">
+  </a>
+        </div></div>
+        <a class="btn secondary" href="joinus.html">Join Our Team</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+const sbtn = document.getElementById('sbtn');
+const slinks = document.getElementById('slinks');
+sbtn.addEventListener('click', () => slinks.classList.toggle('open'));
+
+// Smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = a.getAttribute('href');
+    if (t.length > 1) {
+      e.preventDefault();
+      document.querySelector(t).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      slinks.classList.remove('open');
+    }
+  });
+});
+
+// Fade-in animations
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.card, .wrap, .trusted, .about, .cbox, .hero-feat .feat').forEach(el => {
+  obs.observe(el);
+});
+  </script>
+
+</body>
+</html>

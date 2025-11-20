@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AppDost — Complete IT Solutions</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- navbar-->
+  <nav id="scuh" class="scuh">
+    <div class="s-left">
+      <img src="https://res.cloudinary.com/dhled94be/image/upload/v1762145701/course_thumbnails/fc5f257dr6tzjntorhse.png" alt="AppDost" class="logo" />
+    </div>
+    <div class="s-right" id="slinks">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="joinus.html">Join Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button id="sbtn" class="sbtn" aria-label="toggle menu">☰</button>
+  </nav>
+
+
+
+
+    
+<!-- Contact Popup Form -->
+<div id="quoteForm" class="quote-popup hidden">
+  <form id="contactForm">
+    <h3>Contact Us</h3>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Enter your name" required pattern="[A-Za-z\s]{2,}"
+             title="Name should contain only letters and spaces (at least 2 characters)">
+
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Enter your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+             title="Please enter a valid email address (e.g. name@example.com)">
+
+    <label for="contact">Contact</label>
+    <input type="tel" id="contact" placeholder="Enter your contact number" required pattern="[0-9]{10}"
+   title="Please enter a valid 10-digit contact number."inputmode="numeric"minlength="10"
+  maxlength="10">
+
+    <div class="button-row">
+      <button type="submit" class="quote-btn">Get a Quote</button>
+      <button type="button" id="laterBtn" class="later-btn">Later</button>
+    </div>
+  </form>
+</div>
+
+
+
+  <!-- hero -->
+  <header id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-inner">
+      <div class="badge">🚀 Your Complete IT & Digital Solutions Partner </div>
+      <h1 class="hero-title">
+      We build <span class="accent">Websites</span>, <span class="accent"> Apps</span> and <span class="accent">Digital Platforms </span>that grow your business
+      </h1>
+      <p class="hero-lead">
+        Your trusted partner for comprehensive IT solutions. From mobile apps to enterprise
+        software, we bring innovation and excellence to every project with our expert team of
+        developers.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn primary" href="contact.html">Get Started</a>
+      </div>
+
+<div class="info-text">
+        <span>
+            100% Client Satisfaction
+        </span>
+        <span>
+Secure & Scalable
+        </span>
+        <span>
+24/7 Support
+        </span>
+      </div>
+
+      <div class="hero-feat">
+        <div class="feat">
+          <div class="ic">💻</div>
+          <div class="ftitle">Web Development</div>
+          <div class="fsub">+10 Projects</div>
+        </div>
+        <div class="feat">
+          <div class="ic">📱</div>
+          <div class="ftitle">Mobile Apps</div>
+          <div class="fsub">+4 Apps</div>
+        </div>
+        <div class="feat">
+          <div class="ic">🚚</div>
+          <div class="ftitle">Fast Delivery</div>
+          <div class="fsub">On-Time Always</div>
+        </div>
+      </div>
+    </div>
+    
+  </header>
+
+  <!-- Quick counters -->
+  <section class="counters" aria-hidden="false">
+    <div class="cwrap">
+      <div class="cbox">
+        <div class="cnum" data-target="10">0</div>
+        <div class="ctxt">Web Projects</div>
+      </div>
+      <div class="cbox">
+        <div class="cnum" data-target="4">0</div>
+        <div class="ctxt">Mobile Apps</div>
+      </div>
+      <div class="cbox">
+        <div class="cnum" data-target="1">0</div>
+        <div class="ctxt">CRM Projects</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- mission -->
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2>Empowering Your Business with <span class="brand">AppDost</span></h2>
+      <p class="muted">
+        Your Trusted Partner for Complete Digital Transformation. AppDost is your trusted partner for
+        complete digital transformation. We are a dynamic, innovation-driven IT solutions provider
+        specializing in turning visionary ideas into powerful, market-ready products. Our mission is to
+        empower businesses with cutting-edge technology solutions that drive growth, enhance user
+        experiences, and create lasting digital impact.
+      </p>
+    </div>
+  </section>
+
+  <!-- what we do -->
+  <section id="services" class="services">
+    <div class="wrap">
+      <h2>What We Do</h2>
+      <p class="sub">Our Core Expertise</p>
+
+      <div class="grid6">
+        <div class="card-glass">
+          <div class="card-head">Website Design & Development</div>
+          <p> SEO-optimized, responsive, and conversion-focused websites.</p>
+        </div>
+
+        <div class="card-glass">
+          <div class="card-head">Mobile App Development</div>
+          <p> Android, iOS & cross-platform apps using React Native & Flutter.</p>
+        </div>
+
+        <div class="card-glass">
+          <div class="card-head">Software Development</div>
+          <p> Enterprise-level applications with Java, Spring Boot, and secure REST
+ APIs.</p>
+        </div>
+
+        <div class="card-glass">
+          <div class="card-head"> Cloud & DevOps</div>
+          <p>AWS-based infrastructure, CI/CD pipelines, Dockerization, and monitoring.</p>
+        </div>
+
+        <div class="card-glass">
+          <div class="card-head">Digital Marketing</div>
+          <p>SEO, SMM, and brand visibility enhancement.</p>
+        </div>
+
+        <div class="card-glass">
+          <div class="card-head">Internship & Training</div>
+          <p> Industrial training in Java, Web, and Cloud technologies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="technologies">
+  <h2>Technologies We Work On</h2>
+
+  <div class="tech-marquee">
+    <div class="tech-track">
+    
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+        <p>Java</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
+        <p>Spring Boot</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native">
+        <p>React Native</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">
+        <p>Angular</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+        <p>Node.js</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+        <p>Python</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+        <p>PostgreSQL</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+        <p>MySQL</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+        <p>MongoDB</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+        <p>Docker</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+        <p>HTML</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+        <p>CSS</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+        <p>JavaScript</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+        <p>Git</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/devicon/devicon-original.svg" alt="DevOps">
+        <p>DevOps Tools</p>
+      </div>
+
+     
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+        <p>Java</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
+        <p>Spring Boot</p>
+      </div>
+
+      <div class="tech-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native">
+        <p>React Native</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="supported">
+  <h2>Supported & Recognized By</h2>
+  <p>Backed by prestigious institutions and global partners</p>
+
+  <div class="carousel">
+    <div class="carousel-track">
+      
+      <div class="card">
+        <img src="aicte.jpg" alt="AICTE">
+        <h4>AICTE</h4>
+        <p>Technical Education Council</p>
+      </div>
+
+      <div class="card">
+        <img src="iso.png" alt="ISO 9001 Certified">
+        <h4>ISO 9001</h4>
+        <p>Quality Management Certified</p>
+      </div>
+
+      <div class="card">
+        <img src="ms.png" alt="Microsoft for Startups">
+        <h4>Microsoft for Startups</h4>
+        <p>Global Startup Program</p>
+      </div>
+
+      <div class="card">
+        <img src="googlep.png" alt="Google Partner">
+        <h4>Google Partner</h4>
+        <p>Certified Marketing Partner</p>
+      </div>
+
+      <div class="card">
+        <img src="startup.png" alt="Startup India">
+        <h4>Startup India</h4>
+        <p>DPIIT Recognized Startup</p>
+      </div>
+
+      <div class="card">
+        <img src="govtb.png" alt="Government of Bihar">
+        <h4>Government of Bihar</h4>
+        <p>Startup Bihar Initiative</p>
+      </div>
+
+      <div class="card">
+        <img src="gec.png" alt="GEC Banka">
+        <h4>GEC Banka</h4>
+        <p>Academic Collaboration</p>
+      </div>
+       <div class="card">
+        <img src="meme.jpg" alt="MEME">
+        <h4>MEME</h4>
+        <p>Entrepreneurship Network</p>
+      </div>
+
+      <div class="card">
+        <img src="aicte.jpg" alt="AICTE">
+        <h4>AICTE</h4>
+        <p>Technical Education Council</p>
+      </div>
+      <div class="card">
+        <img src="iso.png" alt="ISO 9001 Certified">
+        <h4>ISO 9001</h4>
+        <p>Quality Management Certified</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!--customer reviews-->
+<section class="trusted">
+  <div class="wrap">
+    <h3>Trusted By Industry Leaders</h3>
+
+    <div class="carousel">
+
+      <div class="testimonial active">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client A">
+        <h4>Janny Doe</h4>
+        <p class="project"> The Weddings Chapter</p>
+        <p class="review">
+          “AppDost helped us build a scalable online store with a smooth UI and powerful backend. 
+          The team was responsive, professional, and delivered right on schedule.”
+        </p>
+      </div>
+
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client B">
+        <h4>Priya Kapoor</h4>
+        <p class="project">Dev Skill Quest</p>
+        <p class="review">
+          “Their  team exceeded expectations. Excellent UI/UX and top-notch functionality — 
+          we saw great results within weeks of launch.”
+        </p>
+      </div>
+
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/64.jpg" alt="Client C">
+        <h4>Jackson Deol</h4>
+        <p class="project">Apke DoctorG</p>
+        <p class="review">
+          “The AppDost team migrated our systems to AWS seamlessly. Their communication and expertise 
+          made the entire process stress-free.”
+        </p>
+      </div>
+
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Client D">
+        <h4>Sara Johnson</h4>
+        <p class="project">BEU Mate App</p>
+        <p class="review">
+          “Loved working with AppDost. They designed a custom app tool that improved our team’s productivity. 
+          Highly recommend their services!”
+        </p>
+      </div>
+
+    </div>
+
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+  <!--projects-->
+<section class="projects" id="projects">
+  <div class="pwrap">
+    <h2 class="section-title">Our Featured Projects</h2>
+    <p class="section-sub">Real solutions for real businesses — explore our successful projects</p>
+
+    <div class="proj-grid">
+      <div class="proj-card in">
+        <h3> ApkeDoctorG</h3>
+        <p>Healthcare appointment booking app for doctors and patients.</p>
+        <span class="tags">Spring Boot • React Native • PostgreSQL • AWS</span>
+        <div class="proj-links">
+          <a href="www.playstore.com" class="plink">Play Store</a>
+          <a href="https://apkedoctorg.com" class="plink">Website</a>
+        </div>
+      </div>
+
+      <div class="proj-card in">
+        <h3>BEU Mate App </h3>
+        <p>Community app for BEU students and alumni with event and post management.</p>
+        <span class="tags">React Native • Spring Boot • MySQL</span>
+        <div class="proj-links">
+           <a href="www.playstore.com" class="plink">Play Store</a>
+          <a href="#" class="plink">Website</a>
+        </div>
+      </div>
+
+      <div class="proj-card in">
+        <h3>TheWeddingsChapter </h3>
+        <p>Wedding management platform connecting vendors and customers.</p>
+        <span class="tags">Angular • Spring Boot • AWS</span>
+        <div class="proj-links">
+           <a href="www.playstore.com" class="plink">Play Store</a>
+          <a href="#" class="plink">Website</a>
+        </div>
+      </div>
+    
+
+
+      <div class="proj-card in">
+        <h3>DevSkillQuest </h3>
+        <p>EdTech platform for learning, internships, and technical assessments.</p>
+        <span class="tags">React.js • Spring Boot • PostgreSQL</span>
+        <div class="proj-links">
+           <a href="www.playstore.com" class="plink">Play Store</a>
+          <a href="#" class="plink">Website</a>
+        </div>
+      </div>
+
+<div class="hero-ctas">
+        <a class="btn primary" href="portfolio.html">View all projects -></a>
+      </div>
+</section>
+
+<!--why choose us -->
+<section class="why-choose">
+  <h2>Why Choose <span>AppDost </span>?</h2>
+  <div class="choose-grid">
+    
+    <div class="choose-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" alt="All-in-one Solutions">
+      <h3>End-to-End IT & Digital Solutions</h3>
+      <p>Everything your business needs, all under one roof — from development to deployment.</p>
+    </div>
+
+    <div class="choose-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Experienced Team">
+      <h3>Experienced Developers & Designers</h3>
+      <p>Our skilled professionals bring years of experience in crafting powerful digital products.</p>
+    </div>
+
+    <div class="choose-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/906/906343.png" alt="Secure Architecture">
+      <h3>Scalable & Secure Architecture</h3>
+      <p>We build cloud-ready, secure, and high-performance systems that grow with your business.</p>
+    </div>
+
+    <div class="choose-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3900/3900833.png" alt="On-time Delivery">
+      <h3>On-time Delivery</h3>
+      <p>We value your time — ensuring transparency and timely delivery on every project.</p>
+    </div>
+
+    <div class="choose-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1040/1040230.png" alt="Affordable Pricing">
+      <h3>Affordable Pricing</h3>
+      <p>Cost-effective solutions designed for startups and small businesses to grow affordably.</p>
+    </div>
+
+    <div class="choose-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3199/3199866.png" alt="Support & Maintenance">
+      <h3>Long-Term Support & Maintenance</h3>
+      <p>We provide continuous support to keep your systems running smoothly post-launch.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- cta -->
+<section class="cta" id="cta">
+  <div class="ctawrap">
+    <h2>Have an Idea?</h2>
+    <p>Let's build it together.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn primary">Get Free Consultation →</a>
+      <a href="services.html" class="btn secondary">View Our Services</a>
+    </div>
+  </div>
+</section>
+
+  <!-- footer-->
+  <footer id="contact" class="footer">
+    <div class="wrap fwrap">
+      <div class="fcol">
+        <p>Your Complete IT & Digital Solutions Partner.</p>
+        <p class="copy">&copy;   AppDost Pvt. Ltd. </p>
+                <p class="copy">   All Rights Reserved.  </p>
+      </div>
+
+      <div class="fcol">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4>Get in Touch</h4>
+        <ul>
+         <li><a href="mailto:info@appdost.com"> info@appdost.com</a></li>
+          <li><a href="www.appdost.com"> www.appdost.com</a></li>
+          <li><a href="contact.html">Request a Quote</a></li>
+  <li><a href="tel:+917635075422">+91 76350 75422</a></li>        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4>Follow Us</h4>
+        <div class="soc">
+          <div class="social-container">
+  <a href="https://www.facebook.com" class="social-link" target="_blank">
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" 
+      alt="Facebook Logo" 
+      class="social-icon"
+    >
+  </a>
+
+
+       <a href="https://twitter.com" class="social-link" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Twitter_new_X_logo.png" 
+       alt="Twitter Logo" 
+       class="social-icon">
+</a>
+
+  <a href="https://www.linkedin.com" class="social-link" target="_blank">
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" 
+      alt="LinkedIn Logo" 
+      class="social-icon">
+  </a>
+        </div></div>
+        <a class="btn secondary" href="joinus.html">Join Our Team</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    
+    const sbtn = document.getElementById('sbtn');
+    const slinks = document.getElementById('slinks');
+    sbtn.addEventListener('click', () => slinks.classList.toggle('open'));
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const t = a.getAttribute('href');
+        if (t.length>1) {
+          e.preventDefault();
+          document.querySelector(t).scrollIntoView({behavior:'smooth',block:'start'});
+          // close nav on mobile
+          slinks.classList.remove('open');
+        }
+      });
+    });
+
+    // Fade-in on scroll helper
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.15});
+
+    document.querySelectorAll('.card, .wrap, .trusted, .about, .cbox, .hero-feat .feat').forEach(el=>{
+      obs.observe(el);
+    });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("quoteForm");
+  const form = document.getElementById("contactForm");
+  const laterBtn = document.getElementById("laterBtn");
+
+  // Check if user already submitted
+  const userSubmitted = localStorage.getItem("quoteUserData");
+
+  if (!userSubmitted) {
+    // Show popup after 3 seconds
+    setTimeout(() => {
+      popup.classList.remove("hidden");
+      popup.classList.add("show");
+    }, 3000);
+  }
+
+  // Handle form submission
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const contact = document.getElementById("contact").value.trim();
+
+    if (name && email && contact) {
+      const userData = { name, email, contact, date: new Date().toISOString() };
+      localStorage.setItem("quoteUserData", JSON.stringify(userData));
+      popup.classList.remove("show");
+      setTimeout(() => popup.classList.add("hidden"), 400);
+      alert("Thank you! Your quote request has been received.");
+    } else {
+      alert("Please fill in all fields.");
+    }
+  });
+
+  // Handle "Later" button click
+  laterBtn.addEventListener("click", () => {
+    popup.classList.remove("show");
+    setTimeout(() => popup.classList.add("hidden"), 400);
+  });
+});
+
+
+
+
+    // COUNTERS (count up when visible)
+    const counterObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting) {
+          const el = entry.target.querySelector('.cnum');
+          if (el && !el.dataset.started) {
+            el.dataset.started = "1";
+            const target = +el.getAttribute('data-target');
+            const duration = 1900;
+            const start = performance.now();
+            const step = (now) => {
+              const t = Math.min(1, (now - start)/duration);
+              el.textContent = Math.floor(t * target + (1 - t) * 0);
+              if (t < 1) requestAnimationFrame(step);
+              else el.textContent = target + (target>1 ? '+' : '');
+            };
+            requestAnimationFrame(step);
+          }
+        }
+      });
+    }, {threshold: 0.4});
+
+    document.querySelectorAll('.cbox').forEach(cb => counterObserver.observe(cb));
+
+
+
+  let current = 0;
+  const testimonials = document.querySelectorAll(".testimonial");
+  const dots = document.querySelectorAll(".dot");
+
+  function showSlide(index) {
+    testimonials.forEach((t, i) => {
+      t.classList.toggle("active", i === index);
+      dots[i].classList.toggle("active", i === index);
+    });
+  }
+
+  function autoSlide() {
+    current = (current + 1) % testimonials.length;
+    showSlide(current);
+  }
+
+  // Auto-scroll every 2 seconds
+  let interval = setInterval(autoSlide, 2000);
+
+  // Allow manual navigation via dots
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      current = i;
+      showSlide(current);
+      clearInterval(interval); // stop auto-scroll temporarily
+      interval = setInterval(autoSlide, 2000);
+    });
+  });
+
+
+
+
+
+  </script>
+</body>
+</html>

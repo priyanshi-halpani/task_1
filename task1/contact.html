@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AppDost Complete IT Solutions</title>
+
+        <link rel="stylesheet" href="style.css">
+<style>
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-size: 1.1rem; 
+
+  margin:0;
+  font-family:"Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:#0b1220;
+  background: linear-gradient(180deg, #fbfdff 0%, #f3f7fb 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.75;
+}
+
+/* ---------- NAV (scuh) ---------- */
+.scuh{
+ position:fixed;
+  width: 100%;
+    top:0;
+  z-index:999;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:0.6rem 1.6rem;
+  background: linear-gradient(90deg, rgba(255,255,255,0.75), rgba(255,255,255,0.6));
+  box-shadow: 0 6px 18px rgba(20,30,50,0.07);
+  backdrop-filter: blur(6px);
+}
+.scuh .logo{height:40px}
+.s-right{display:flex;gap:1rem;align-items:center}
+.s-right a{
+  color:#0b1220;
+  text-decoration:none;
+  font-weight:500;
+  font-size:0.92rem;
+  padding:0.5rem 0.6rem;
+  border-radius:8px;
+  transition:all .22s ease;
+}
+.s-right a:hover{
+  transform:translateY(-2px);
+  color:#4f46e5;
+  background:rgba(79,70,229,0.06);
+}
+.sbtn{
+  display:none;
+  background:none;
+  border:0;
+  font-size:1.25rem;
+  cursor:pointer;
+  padding:6px 8px;
+}
+/* ---------- Contact Info Section ---------- */
+.contact-info-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+/* ---------- Office Locations Section ---------- */
+.office-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+    justify-content: center; /* centers the grid inside the container */
+
+}
+
+.office-card {
+  border-radius: 16px;
+  padding: 1.8rem 1.4rem;
+  background: #f1f7fe;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.office-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(56, 182, 241, 0.25);
+  background: linear-gradient(135deg, #ffffff, #f0f6ff);
+}
+
+.office-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  
+  margin-bottom: 0.8rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+}
+
+.badge.hq {
+  background: linear-gradient(90deg, #38b6f1, #615ae4);
+  color: #fff;
+}
+
+.badge.branch {
+  background: rgba(97, 90, 228, 0.15);
+  color: #615ae4;
+}
+
+.office-card h3 {
+  margin: 0;
+  font-size: 1.25rem; /* default large screens */
+  color: #0b1220;
+}
+
+.address {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.map-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: #38b6f1;
+  transition: color 0.25s ease;
+}
+
+.map-link:hover {
+  color: #615ae4;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 440px) {
+  .office-card {
+    padding: 1.2rem;
+  }
+  .office-card h3 {
+    font-size: 1rem;
+  }
+  .info-box h2 {
+    font-size: 1.5rem;
+  }
+   .office-grid {
+    gap: 1rem; /* reduce gap on very small screens */
+  }
+}
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .office-card {
+    padding: 1.4rem;
+  }
+  .office-card h3 {
+    font-size: 1.15rem;
+  }
+  .info-box h2 {
+    font-size: 1.6rem;
+  }
+    .office-grid {
+    gap: 1.2rem;
+  }
+}
+
+/* Medium screens (tablets / small laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .office-card {
+    padding: 1.6rem;
+  }
+  .office-card h3 {
+    font-size: 1.2rem;
+  }
+  .info-box h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1025px) {
+  .office-card {
+    padding: 1.8rem;
+  }
+  .office-card h3 {
+    font-size: 1.25rem;
+  }
+  .info-box h2 {
+    font-size: 2rem;
+  }
+}
+
+
+.info-box {
+  background: #fbf7f7;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(6, 11, 40, 0.08);
+  width: 100vw;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.info-box h2 {
+  background: linear-gradient(90deg, #38b6f1, #615ae4);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+.info-sub {
+  color: #555;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  background: linear-gradient(135deg, #eef7ff, #f9fbff);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 250px;
+}
+
+.info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.2);
+}
+
+.icon {
+  font-size: 1.6rem;
+}
+
+.follow-title {
+  margin-top: 2rem;
+  background: linear-gradient(90deg, #38b6f1, #615ae4);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 1.4rem;
+}
+
+.soc-btn {
+  display: inline-block;
+  margin: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.fb { background: #1877f2; }
+.tw { background: #1da1f2; }
+.li { background: #0077b5; }
+.ig { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
+
+.soc-btn:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+  box-shadow: 0 8px 20px rgba(56, 182, 241, 0.3);
+}
+
+.map-box {
+  margin-top: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(20,30,50,0.12);
+}
+
+@media (max-width: 768px) {
+  .info-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-item {
+    width: 100%;
+    max-width: 360px;
+  }
+  .map-box iframe {
+    height: 220px;
+  }
+}
+
+
+
+  .form-section {
+  background: linear-gradient(180deg, #f9fbff, #eef7ff);
+  padding: 4rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(6, 11, 40, 0.08);
+  max-width: 600px;
+  width: 100%;
+  padding: 2.5rem 2rem;
+}
+
+.contact-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  background: linear-gradient(90deg, #38b6f1, #615ae4);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.contact-container .sub {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #0b1220;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #dce6f9;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.25s ease;
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #38b6f1;
+  outline: none;
+  box-shadow: 0 0 6px rgba(56, 182, 241, 0.3);
+}
+
+
+.contact-form input:invalid,
+.contact-form textarea:invalid {
+  border-color: #e53e3e;
+}
+.contact-form input:valid,
+.contact-form textarea:valid {
+  border-color: #16b5ff;
+}
+
+#formbtn {
+  background: linear-gradient(90deg, #38b6f1, #615ae4);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#formbtn:hover {
+  background: linear-gradient(90deg, #0e9ab2, #16b5ff);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(56, 182, 241, 0.25);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 2rem 1.5rem;
+  }
+  .contact-container h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .form-section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+.footer{
+  background:linear-gradient(180deg,#4f46e5,#0b1220);
+  color:#e6eefc;
+  padding:2.6rem 1rem;
+  font-size: 1.25rem;
+}
+.fwrap{
+  display:flex;
+  gap:2rem;
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1rem;
+  flex-wrap:wrap;
+}
+.fcol{flex:1;min-width:200px;}
+.flogo{height:36px;filter:brightness(10) invert(1);margin-bottom:10px;}
+.footer h4{margin:0 0 10px 0;}
+.footer a{ font-size: 1.05rem; color:rgba(255,255,255,0.9);text-decoration:none;display:inline-block;margin-bottom:6px;}
+.footer .btn{margin-top:10px;}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1000px){
+  body {
+    font-size: 1.05rem;
+  }
+  .about h2 {
+    font-size: 1.4rem;
+  }
+  .cnum {
+    font-size: 1.7rem;
+  }
+  .ctxt {
+    font-size: 1rem;
+  }
+  .services h3 {
+    font-size: 1.2rem;
+  }
+  .card {
+    font-size: 1.05rem;
+  }
+  .cl {
+    font-size: 1.05rem;
+  }
+  .footer h4 {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width:720px){
+  .s-right{display:none;}
+  .sbtn{display:block;}
+  .s-right.open{
+    display:flex;
+    position:absolute;
+    top:64px;
+    right:14px;
+    background:#fff;
+    padding:12px;
+    flex-direction:column;
+    border-radius:10px;
+    box-shadow:0 14px 40px rgba(2,6,23,0.12);
+  }
+
+
+  .hero-inner{padding:3rem 1rem;}
+  .hero{min-height:520px;}
+  .grid6{grid-template-columns:1fr;}
+  .wrap{text-align:left;padding-left:1rem;padding-right:1rem;}
+  .cbox {
+    padding: 20px 18px;
+    min-height: 90px; /* slightly smaller on mobile */
+  }
+  .cwrap{flex-direction:row;gap:12px;overflow:auto;padding:0 1rem;}
+   .proj-card { max-width: 100%; }
+  .ctawrap h2 { font-size: 1.8rem; }
+  .ctawrap p { font-size: 1rem; }
+  .cta-buttons { flex-direction: column; gap: 0.8rem; }
+}
+@media (max-width:420px){
+  .badge{font-size:0.75rem;padding:6px 10px;}
+  .hero-title{font-size:1.5rem;}
+  .hero-lead{font-size:0.95rem;}
+  .cnum{font-size:1.25rem;}
+}
+
+/* ---------- animations ---------- */
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+.card,.cbox,.cl,.feat,.wrap{opacity:0;transform:translateY(18px);transition:all .6s cubic-bezier(.2,.9,.2,1);}
+.in{opacity:1;transform:translateY(0);}
+
+/* Container for all social icons */
+.social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;       /* allows wrapping on smaller screens */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Link wrapper */
+.social-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Icon styling */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* Hover animation */
+.social-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Responsive resizing */
+@media (max-width: 768px) {     /* tablets */
+  .social-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {     /* mobile phones */
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+</style>
+    </head>
+    <body>
+        
+        <nav id="scuh" class="scuh">
+    <div class="s-left">
+      <img src="https://res.cloudinary.com/dhled94be/image/upload/v1762145701/course_thumbnails/fc5f257dr6tzjntorhse.png" alt="AppDost" class="logo" />
+    </div>
+    <div class="s-right" id="slinks">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="joinus.html">Join Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button id="sbtn" class="sbtn" aria-label="toggle menu">☰</button>
+  </nav>
+
+<section class="form-section">
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <p class="sub">We’d love to hear from you! Fill in your details below.</p>
+
+    <form class="contact-form" novalidate>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name"
+             placeholder="Enter your full name"
+             required pattern="[A-Za-z\s]{2,}"
+             title="Name should contain only letters and spaces (at least 2 characters)">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email"
+             placeholder="Enter a valid email"
+             required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+             title="Please enter a valid email address (e.g. name@example.com)">
+
+
+<label for="contact">Contact</label>
+<input type="tel" id="contact" name="contact" placeholder="Enter your contact number"
+  required pattern="[0-9]{10}"
+   title="Please enter a valid 10-digit contact number."inputmode="numeric"minlength="10"
+  maxlength="10" />
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject"
+             placeholder="Enter the subject"
+             required pattern="[A-Za-z0-9\s.,!?'-]{3,}"
+             title="Subject should be at least 3 characters and may include letters, numbers, and punctuation.">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5"
+                placeholder="Enter your message"
+                required minlength="10"
+                title="Message should be at least 10 characters long."></textarea>
+
+      <button type="submit" id="formbtn">Submit</button>
+    </form>
+  </div>
+</section>
+
+
+<section class="form-section">
+  <div class="contact-info-container">
+    <div class="info-box">
+      <h2>Our Office Locations</h2>
+      <p class="info-sub">Visit us at any of our offices across Bihar for personalized consultation</p>
+
+      <div class="office-grid">
+        <!-- Headquarters -->
+        <div class="office-card">
+          <div class="office-header">
+            <span class="badge hq">HEADQUARTERS</span>
+            <h3>Banka Office</h3>
+          </div>
+          <p class="address">
+            AppDost-Complete IT Solutions,<br>
+            Jawahar Lal Nehru Marg, Banka, Bihar 813102, India
+          </p>
+          <a href="https://maps.google.com/?q=AppDost+Computer+IT+Solutions,+Jawahar+Lal+Nehru+Marg,+Banka,+Bihar+813102" 
+             target="_blank" class="map-link">View on Map →</a>
+        </div>
+
+        <!-- Motihari Branch -->
+        <div class="office-card">
+          <div class="office-header">
+            <span class="badge branch">BRANCH</span>
+            <h3>Motihari Office</h3>
+          </div>
+          <p class="address">
+            AppDost-Complete IT Solutions,<br>
+            Janpul Chowk, Kesariya, Motihari, Bihar 845426, India
+          </p>
+          <a href="https://maps.google.com/?q=AppDost+Computer+IT+Solutions,+Janpul+Chowk,+Kesariya,+Motihari,+Bihar+845426" 
+             target="_blank" class="map-link">View on Map →</a>
+        </div>
+
+        <!-- Patna Branch -->
+        <div class="office-card">
+          <div class="office-header">
+            <span class="badge branch">BRANCH</span>
+            <h3>Patna Office</h3>
+          </div>
+          <p class="address">
+            AppDost-Complete IT Solutions,<br>
+            Mithapur, Station Road, Patna, Bihar 800001, India
+          </p>
+          <a href="https://maps.google.com/?q=AppDost+Solution+Computer+IT+Solutions,+Mithapur,+Station+Road,+Patna,+Bihar+800001" 
+             target="_blank" class="map-link">View on Map →</a>
+        </div>
+
+      
+      </div>
+
+      <h3 class="follow-title">Follow Us</h3>
+      <div class="socials">
+        <a href="https://www.facebook.com" class="soc-btn fb">🌐 Facebook</a>
+        <a href="https://www.twitter.com/" class="soc-btn tw">🐦 Twitter</a>
+        <a href="https://www.linkedin.com/company/appdost-complete-it-solution/posts/?feedView=all" class="soc-btn li">💼 LinkedIn</a>
+        <a href="https://www.instagram.com/" class="soc-btn ig">📸 Instagram</a>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- footer-->
+  <footer id="contact" class="footer">
+    <div class="wrap fwrap">
+      <div class="fcol">
+        <p>Your Complete IT & Digital Solutions Partner.</p>
+        <p class="copy">&copy;   AppDost Pvt. Ltd. </p>
+                <p class="copy">   All Rights Reserved.  </p>
+      </div>
+
+      <div class="fcol">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4>Get in Touch</h4>
+        <ul>
+         <li><a href="mailto:info@appdost.com"> info@appdost.com</a></li>
+          <li><a href="www.appdost.com"> www.appdost.com</a></li>
+          <li><a href="contact.html">Request a Quote</a></li>
+  <li><a href="tel:+917635075422">+91 76350 75422</a></li>        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4>Follow Us</h4>
+        <div class="soc">
+          <div class="social-container">
+  <a href="https://www.facebook.com" class="social-link" target="_blank">
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" 
+      alt="Facebook Logo" 
+      class="social-icon"
+    >
+  </a>
+
+
+       <a href="https://twitter.com" class="social-link" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Twitter_new_X_logo.png" 
+       alt="Twitter Logo" 
+       class="social-icon">
+</a>
+
+  <a href="https://www.linkedin.com/company/appdost-complete-it-solution/posts/?feedView=all" class="social-link" target="_blank">
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" 
+      alt="LinkedIn Logo" 
+      class="social-icon">
+  </a>
+        </div></div>
+        <a class="btn secondary" href="joinus.html">Join Our Team</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+        <script>
+  // Mobile nav toggle
+const sbtn = document.getElementById('sbtn');
+const slinks = document.getElementById('slinks');
+sbtn.addEventListener('click', () => slinks.classList.toggle('open'));
+
+// Smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = a.getAttribute('href');
+    if (t.length > 1) {
+      e.preventDefault();
+      document.querySelector(t).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      slinks.classList.remove('open');
+    }
+  });
+});
+
+// Fade-in animations
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.card, .wrap, .trusted, .about, .cbox, .hero-feat .feat').forEach(el => {
+  obs.observe(el);
+});
+
+
+// ✅ Contact form submission and save to localStorage
+document.querySelector('.contact-form').addEventListener('submit', function (e) {
+  e.preventDefault(); // stop form reload
+
+  if (!this.checkValidity()) {
+    this.reportValidity();
+    alert("⚠️ Please fill all fields correctly before submitting!");
+    return;
+  }
+
+  // Collect values from inputs
+  const formData = {
+    name: document.getElementById('name').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    contact: document.getElementById('contact').value.trim(),
+    subject: document.getElementById('subject').value.trim(),
+    message: document.getElementById('message').value.trim(),
+    date: new Date().toLocaleString("en-IN")
+  };
+
+  // Retrieve existing submissions (if any)
+  let allData = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+  allData.push(formData);
+
+  // Save updated list back to localStorage
+  localStorage.setItem('contactSubmissions', JSON.stringify(allData));
+
+  alert("✅ Your message has been submitted successfully!");
+  this.reset();
+});
+        </script>
+
+    </body>
+</html>

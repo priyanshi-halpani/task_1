@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — AppDost | Complete IT Solutions</title>
+  <style>
+ * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-size: 1.1rem;
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #0b1220;
+      background: linear-gradient(180deg, #fbfdff 0%, #f3f7fb 100%);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.75;
+    }
+
+    /* ---------- NAV ---------- */
+    .scuh {
+       position:fixed;
+  width: 100%;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1.6rem;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
+      box-shadow: 0 6px 18px rgba(20, 30, 50, 0.07);
+      backdrop-filter: blur(6px);
+    }
+
+    .scuh .logo {
+      height: 40px;
+    }
+
+    .s-right {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .s-right a {
+      color: #0b1220;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+      padding: 0.5rem 0.6rem;
+      border-radius: 8px;
+      transition: all 0.22s ease;
+    }
+
+    .s-right a:hover {
+      transform: translateY(-2px);
+      color: #4f46e5;
+      background: rgba(79, 70, 229, 0.06);
+    }
+
+       .sbtn {
+      display: none;
+      background: none;
+      border: 0;
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: 6px 8px;
+    }
+    /* ---------- HERO ---------- */
+    header{
+      padding:8rem 1rem 5rem;
+      text-align:center;
+      background:linear-gradient(135deg,#6A1B9A, #00AEEF);
+      color:#fff;
+      border-radius:0 0 80px 80px;
+      animation:heroGradient 6s ease infinite alternate;
+      background-size:200% 200%;
+    }
+
+    @keyframes heroGradient{
+      0%{background-position:0% 50%;}
+      100%{background-position:100% 50%;}
+    }
+
+    header h1{
+      font-size:3rem;
+      font-weight:700;
+      margin-bottom:1rem;
+    }
+
+    header h1 span{color:#ffffff;}
+
+    header p{
+      max-width:640px;margin:0 auto 2rem;
+      font-size:1.1rem;line-height:1.6;
+    }
+    
+    .btn{
+      display:inline-block;
+      padding:0.8rem 1.8rem;
+      border-radius:25px;
+      font-weight:600;
+      background:#fff;
+      color:#4f46e5;
+      transition:0.3s;
+    }
+    .btn:hover{
+      background:#2b0647;
+      color:#fff;
+      box-shadow:0 0 15px rgba(0,194,255,0.5);
+    }
+
+    /* ---------- MISSION / VISION ---------- */
+    .mission{
+      padding:5rem 2rem;
+      text-align:center;
+      background:#fff;
+    }
+    .mission h2{
+      font-size:2.2rem;
+      color:#4f46e5;
+      margin-bottom:2rem;
+    }
+    .mission .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .mission .card{
+      background:#f8f9ff;
+      border:1px solid rgba(79,70,229,0.1);
+      border-radius:20px;
+      padding:2rem;
+      text-align:left;
+      transition:.4s;
+      box-shadow:0 8px 20px rgba(79,70,229,0.08);
+      opacity:0;transform:translateY(20px);
+    }
+    .mission .card.in{opacity:1;transform:translateY(0);}
+    .mission .card:hover{transform:translateY(-8px);  
+       box-shadow: 0 0 30px 5px rgba(154, 132, 220, 0.7);}
+    .mission .card h3{
+      color:#4f46e5;
+      margin-bottom:0.8rem;
+    }
+
+    /* ---------- TIMELINE ---------- */
+    .timeline{
+      background:linear-gradient(135deg,#eef1ff,#e8ebff);
+      padding:5rem 2rem;
+      text-align:center;
+    }
+    .timeline h2{color:#4f46e5;margin-bottom:2rem;}
+    .timeline ul{
+      list-style:none;
+      max-width:800px;
+      margin:0 auto;
+      position:relative;
+    }
+    .timeline ul::before{
+      content:'';
+      position:absolute;
+      left:50%;
+      top:0;
+      width:3px;
+      height:100%;
+      background:#4f46e5;
+      transform:translateX(-50%);
+    }
+    .timeline li{
+      position:relative;
+      background:#fff;
+      padding:1.2rem 1.8rem;
+      border-radius:15px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+      width:calc(50% - 40px);
+      margin:2rem 0;
+      opacity:0;transform:translateY(20px);
+      transition:all .6s cubic-bezier(.2,.9,.2,1);
+    }
+    .timeline li.in{opacity:1;transform:translateY(0);}
+    .timeline li:nth-child(odd){left:0;}
+    .timeline li:nth-child(even){left:50%;}
+    .timeline li::after{
+      content:'';
+      position:absolute;
+      top:20px;
+      right:-8px;
+      width:16px;height:16px;
+      background:#4f46e5;border-radius:50%;
+    }
+    .timeline li:nth-child(even)::after{left:-8px;right:auto;}
+    .timeline h4{color:#4f46e5;margin-bottom:0.6rem;}
+    @media(max-width:820px){
+      .timeline ul::before{left:10px;}
+      .timeline li{width:calc(100% - 40px);left:20px!important;}
+      .timeline li::after{left:-18px;}
+    }
+
+    /* ---------- TEAM ---------- */
+    .team{
+      background:#fff;
+      padding:5rem 2rem;
+      text-align:center;
+    }
+    .team h2{
+      color:#4f46e5;
+      font-size:2.2rem;
+      margin-bottom:2rem;
+    }
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:2rem;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .member{
+      background:#f9f9ff;
+      border-radius:18px;
+      padding:1.5rem;
+      box-shadow:0 6px 16px rgba(79,70,229,0.08);
+      transition:.4s;
+      opacity:0;transform:translateY(20px);
+    }
+    .member.in{opacity:1;transform:translateY(0);}
+    .member:hover{transform:translateY(-6px);}
+    .member img{
+      width:100%;
+      border-radius:12px;
+      margin-bottom:1rem;
+      height:220px;
+      object-fit:cover;
+    }
+    .member h4{color:#0b1220;margin-bottom:0.3rem;}
+    .member p{color:#4f46e5;font-size:0.95rem;}
+
+    /* ---------- FOOTER (EXACT COPY FROM HOME) ---------- */
+    .footer{
+      background:linear-gradient(180deg,#4f46e5,#0b1220);
+      color:#e6eefc;
+      padding:2.6rem 1rem;
+      font-size:1.25rem;
+    }
+    .fwrap{
+      display:flex;
+      gap:2rem;
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 1rem;
+      flex-wrap:wrap;
+    }
+    .fcol{flex:1;min-width:200px;}
+    .flogo{height:36px;filter:brightness(10) invert(1);margin-bottom:10px;}
+    .footer h4{margin:0 0 10px 0;}
+    .footer a{ font-size: 1.05rem; color:rgba(255,255,255,0.9);text-decoration:none;display:inline-block;margin-bottom:6px;}
+    .footer .btn{margin-top:10px;}
+    .btn.secondary{
+      background:transparent;
+      color:#fff;
+      border:2px solid #00c2ff;
+    }
+   
+
+
+
+/* Container for all social icons */
+.social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;       /* allows wrapping on smaller screens */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Link wrapper */
+.social-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Icon styling */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* Hover animation */
+.social-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Responsive resizing */
+
+
+ @media (max-width: 900px) {
+      .s-right {
+        display: none;
+      }
+      .sbtn {
+        display: block;
+      }
+      .s-right.open {
+        display: flex;
+        position: absolute;
+        top: 64px;
+        right: 14px;
+        background: #fff;
+        padding: 12px;
+        flex-direction: column;
+        border-radius: 10px;
+        box-shadow: 0 14px 40px rgba(2, 6, 23, 0.12);
+      }
+    }
+
+
+@media (max-width: 768px) {    
+  .social-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+    .s-right {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 200px;
+    text-align: right;
+  }
+
+  /* Show when menu is toggled open */
+  .s-right.open {
+    display: flex;
+  }
+
+  /* Show the hamburger button */
+  .sbtn {
+    display: block;
+    color: #0b1220;
+  }
+
+  /* Style nav links inside dropdown */
+  .s-right a {
+    display: block;
+    padding: 0.7rem 0;
+    font-size: 1rem;
+    border-radius: 6px;
+    color: #0b1220;
+    transition: background 0.3s ease;
+  }
+
+  .s-right a:hover {
+    background: rgba(79, 70, 229, 0.08);
+    color: #4f46e5;
+  }
+
+
+}
+
+@media (max-width: 480px) {     /* mobile phones */
+.social-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="scuh" class="scuh">
+    <div class="s-left">
+      <img src="https://res.cloudinary.com/dhled94be/image/upload/v1762145701/course_thumbnails/fc5f257dr6tzjntorhse.png" alt="AppDost" class="logo" />
+    </div>
+    <div class="s-right" id="slinks">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="joinus.html">Join Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button id="sbtn" class="sbtn" aria-label="toggle menu">☰</button>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <h1>About <span>AppDost</span></h1>
+    <p>AppDost Pvt. Ltd. is a next-generation IT services company specializing in software, web, and
+mobile app development.
+We help startups, enterprises, and entrepreneurs scale their businesses through technology,
+design, and innovation.
+Our mission is to simplify technology and make digital transformation affordable for every business.
+We believe in delivering high-quality, customer-centric, and performance-driven solutions that help
+brands grow faster.</p>
+    <a href="contact.html" class="btn">Let’s Collaborate</a>
+  </header>
+
+  <!-- MISSION -->
+  <section class="mission">
+    <h2>Our Mission & Vision</h2>
+    <div class="grid">
+      <div class="card"><h3>Our Mission</h3><p>To simplify technology and deliver powerful, user-focused digital experiences for every
+business.</p></div>
+      <div class="card"><h3>Our Vision</h3><p>To be a globally trusted technology partner known for innovation, transparency, and quality.</p></div>
+      <div class="card"><h3>Our Values</h3><p>Innovation, integrity, and collaboration drive every step of our journey to deliver excellence and long-term value for our clients.</p></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline">
+    <h2>Our Journey</h2>
+    <ul>
+      <li><h4>January 2025 — Founded</h4><p>AppDost was born with a vision to empower businesses through digital transformation in Bihar.</p></li>
+      <li><h4>March 2025 — Growth</h4><p>We expanded our team and launched services in app, web, and enterprise software development.</p></li>
+      <li><h4>October 2025 — Innovation</h4><p>Adopted cloud-first solutions and AI-based development practices to stay ahead in tech evolution.</p></li>
+    </ul>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-grid">
+      <div class="member"><img src="ceo.jpg" alt="Team Member"><h4>Priyesranjan Sir</h4><p>Founder & CEO</p></div>
+      <div class="member"><img src="giude.png" alt="Team Member"><h4>Bajrangi Sir</h4><p>Guide</p></div>
+      <div class="member"><img src="hr.png" alt="Team Member"><h4>Rohit Raj</h4><p>HR</p></div>
+        <div class="member"><img src="pr.png" alt="Team Member"><h4>Priyanshi Halpani</h4><p>Front-end Developer</p></div>
+
+    </div>
+  </section>
+
+   <!-- footer-->
+  <footer id="contact" class="footer">
+    <div class="wrap fwrap">
+      <div class="fcol">
+        <p>Your Complete IT & Digital Solutions Partner.</p>
+        <p class="copy">&copy;   AppDost Pvt. Ltd. </p>
+                <p class="copy">   All Rights Reserved.  </p>
+      </div>
+
+      <div class="fcol">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4>Get in Touch</h4>
+        <ul>
+         <li><a href="mailto:info@appdost.com"> info@appdost.com</a></li>
+          <li><a href="www.appdost.com"> www.appdost.com</a></li>
+          <li><a href="contact.html">Request a Quote</a></li>
+  <li><a href="tel:+917635075422">+91 76350 75422</a></li>        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4>Follow Us</h4>
+        <div class="soc">
+          <div class="social-container">
+  <a href="https://www.facebook.com" class="social-link" target="_blank">
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" 
+      alt="Facebook Logo" 
+      class="social-icon"
+    >
+  </a>
+
+
+       <a href="https://twitter.com" class="social-link" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Twitter_new_X_logo.png" 
+       alt="Twitter Logo" 
+       class="social-icon">
+</a>
+
+  <a href="https://www.linkedin.com" class="social-link" target="_blank">
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" 
+      alt="LinkedIn Logo" 
+      class="social-icon">
+  </a>
+        </div></div>
+        <a class="btn secondary" href="joinus.html">Join Our Team</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Mobile nav toggle
+const sbtn = document.getElementById('sbtn');
+const slinks = document.getElementById('slinks');
+sbtn.addEventListener('click', () => slinks.classList.toggle('open'));
+
+    // scroll animation
+    const obs=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
+        }
+      });
+    },{threshold:0.15});
+    document.querySelectorAll('.card,.member, .timeline li').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>
